@@ -20,7 +20,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-naranjas',
-    name: 'Naranjas de Zumo',
+    name: 'Naranjas',
     description: 'Perfectas para zumo natural',
     price: 1.0,
     unit: 'kg',

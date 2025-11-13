@@ -49,7 +49,7 @@ export default function Hero() {
               <p className="text-4xl font-black">1,50€/kg</p>
             </div>
             <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
-              <p className="text-2xl font-bold">Naranjas de Zumo</p>
+              <p className="text-2xl font-bold">Naranjas Z</p>
               <p className="text-4xl font-black">1,00€/kg</p>
             </div>
           </div>
