@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     price: 2.8,
     unit: 'kg',
     category_id: 'cat-frutas',
-    image_url: '/uvas.jpg',
+    image_url: '/uvass.jpg',
     is_featured: false,
     is_offer: false,
     stock_available: true,
@@ -91,6 +91,19 @@ export const PRODUCTS: Product[] = [
     unit: 'kg',
     category_id: 'cat-verduras',
     image_url: '/coles.jpg',
+    is_featured: false,
+    is_offer: false,
+    stock_available: true,
+    created_at: new Date().toISOString()
+  }
+  ,{
+    id: 'prod-pera-ercolina',
+    name: 'Pera ercolina',
+    description: 'Pera ercolina dulce y crujiente',
+    price: 2.4,
+    unit: 'kg',
+    category_id: 'cat-frutas',
+    image_url: '/pera.jpg',
     is_featured: false,
     is_offer: false,
     stock_available: true,

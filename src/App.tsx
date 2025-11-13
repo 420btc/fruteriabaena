@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Delivery from './components/Delivery';
 import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -9,11 +10,9 @@ import Footer from './components/Footer';
 import Cart from './components/Cart';
 
 function App() {
-  const [currentSection, setCurrentSection] = useState('inicio');
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleNavigate = (section: string) => {
-    setCurrentSection(section);
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -32,6 +31,7 @@ function App() {
             <Hero />
           </div>
           <Products />
+          <Delivery />
           <About />
           <Contact />
         </main>

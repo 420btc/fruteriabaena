@@ -24,8 +24,12 @@ export default function About() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-green-100 to-yellow-100 rounded-3xl h-96 flex items-center justify-center">
-            <span className="text-8xl">🍊🍎🥬</span>
+          <div className="rounded-3xl overflow-hidden h-96">
+            <img
+              src="/hero1.png"
+              alt="Frutas y Verduras Baena"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
