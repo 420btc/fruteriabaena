@@ -33,11 +33,19 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
+      {product.is_offer && (
+        <div className="md:hidden text-center mt-2">
+          <span className="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
+            OFERTA
+          </span>
+        </div>
+      )}
+
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-gray-800">{product.name}</h3>
           {product.is_offer && (
-            <span className="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
+            <span className="hidden md:inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
               OFERTA
             </span>
           )}
