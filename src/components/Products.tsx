@@ -1,46 +1,12 @@
-import { useEffect, useState } from 'react';
-import { supabase, Product, Category } from '../lib/supabase';
+import { useState } from 'react';
+import { PRODUCTS, CATEGORIES, Product, Category } from '../lib/supabase';
 import ProductCard from './ProductCard';
 
 export default function Products() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [products] = useState<Product[]>(PRODUCTS);
+  const [categories] = useState<Category[]>(CATEGORIES);
   const [selectedCategory, setSelectedCategory] = useState<string>('todas');
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchCategories();
-    fetchProducts();
-  }, []);
-
-  const fetchCategories = async () => {
-    const { data, error } = await supabase
-      .from('categories')
-      .select('*')
-      .order('name');
-
-    if (error) {
-      console.error('Error fetching categories:', error);
-    } else if (data) {
-      setCategories(data);
-    }
-  };
-
-  const fetchProducts = async () => {
-    setLoading(true);
-    const { data, error } = await supabase
-      .from('products')
-      .select('*')
-      .order('is_featured', { ascending: false })
-      .order('name');
-
-    if (error) {
-      console.error('Error fetching products:', error);
-    } else if (data) {
-      setProducts(data);
-    }
-    setLoading(false);
-  };
+  const [loading] = useState(false);
 
   const filteredProducts = selectedCategory === 'todas'
     ? products
