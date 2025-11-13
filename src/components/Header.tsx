@@ -31,7 +31,7 @@ export default function Header({ onNavigate, onCartClick }: HeaderProps) {
             className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white hover:text-white transition-colors whitespace-nowrap truncate max-w-[60vw] md:max-w-[28rem] md:justify-self-start"
             style={{ textShadow: '1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000' }}
           >
-            Frutas y Verduras Baena
+            Frutas y Verduras <span className="text-red-600">Baena</span>
           </button>
 
           <nav className="hidden md:flex md:justify-self-center justify-center space-x-6 md:space-x-10">
