@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Plus, Minus, Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export default function Checkout() {
-  const { cart, getTotalPrice, clearCart } = useCart();
+  const { cart, getTotalPrice, clearCart, updateQuantity, removeFromCart } = useCart();
   const total = getTotalPrice();
 
   const [name, setName] = useState('');
@@ -53,17 +54,47 @@ export default function Checkout() {
 
           <div className="space-y-6">
             <div className="bg-white rounded-3xl shadow p-6">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Resumen</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Cesta</h3>
               {cart.length === 0 ? (
-                <p className="text-gray-500">No hay productos en el carrito.</p>
+                <p className="text-gray-500">Tu carrito está vacío.</p>
               ) : (
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {cart.map(item => (
-                    <div key={item.id} className="flex items-center justify-between">
-                      <span className="text-gray-700">{item.name} × {item.quantity}</span>
-                      <span className="font-semibold">{(item.price * item.quantity).toFixed(2)}€</span>
+                    <div key={item.id} className="bg-gray-50 rounded-2xl p-4 flex items-center gap-4">
+                      <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        {item.image_url ? (
+                          <img src={item.image_url} alt={item.name} className="w-full h-full object-cover rounded-xl" />
+                        ) : (
+                          <span className="text-3xl">🍎</span>
+                        )}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-gray-800 truncate">{item.name}</h3>
+                        <p className="text-sm text-gray-600">{item.price.toFixed(2)}€/{item.unit}</p>
+
+                        <div className="flex items-center gap-2 mt-2">
+                          <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="bg-white hover:bg-gray-100 p-1 rounded-lg transition-colors">
+                            <Minus className="w-4 h-4 text-gray-700" />
+                          </button>
+                          <span className="text-sm font-medium min-w-[3rem] text-center">
+                            {item.quantity} {item.unit}
+                          </span>
+                          <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="bg-white hover:bg-gray-100 p-1 rounded-lg transition-colors">
+                            <Plus className="w-4 h-4 text-gray-700" />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="text-right flex flex-col items-end gap-2">
+                        <p className="font-bold text-lg text-gray-800">{(item.price * item.quantity).toFixed(2)}€</p>
+                        <button onClick={() => removeFromCart(item.id)} className="text-red-500 hover:text-red-600 p-1">
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
                     </div>
                   ))}
+
                   <div className="border-t pt-4 flex items-center justify-between">
                     <span className="text-lg text-gray-800">Total</span>
                     <span className="text-xl font-bold text-green-600">{total.toFixed(2)}€</span>
