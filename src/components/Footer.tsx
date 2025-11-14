@@ -67,11 +67,6 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <img
-            src="/footer.jpg"
-            alt="Detalle Frutas y Verduras Baena"
-            className="mx-auto h-12 w-auto object-contain opacity-90"
-          />
           <p className="flex items-center justify-center gap-2">
             Hecho con <Heart className="w-4 h-4 text-red-500" /> en Churriana
           </p>
