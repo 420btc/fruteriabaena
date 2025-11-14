@@ -4,6 +4,13 @@ export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl overflow-hidden mb-12 shadow-xl">
+          <img
+            src="/banner.jpg"
+            alt="Promoción Frutas y Verduras Baena"
+            className="w-full h-auto object-contain"
+          />
+        </div>
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             Frescura, Calidad y Buen Precio
