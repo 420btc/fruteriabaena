@@ -113,7 +113,8 @@ export default function Cart({ isOpen, onClose }: CartProps) {
 
             <button
               onClick={() => {
-                alert('Funcionalidad de pago próximamente. Por favor, llama al 692 26 60 50 para realizar tu pedido.');
+                onClose();
+                window.location.hash = '#/checkout';
               }}
               className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl transition-colors"
             >
