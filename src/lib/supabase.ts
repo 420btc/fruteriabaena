@@ -109,6 +109,58 @@ export const PRODUCTS: Product[] = [
     stock_available: true,
     created_at: new Date().toISOString()
   }
+  ,{
+    id: 'prod-zanahorias',
+    name: 'Zanahorias',
+    description: 'Zanahorias frescas y crujientes',
+    price: 1.4,
+    unit: 'kg',
+    category_id: 'cat-verduras',
+    image_url: '/zanahoria.jpg',
+    is_featured: false,
+    is_offer: false,
+    stock_available: true,
+    created_at: new Date().toISOString()
+  }
+  ,{
+    id: 'prod-platano',
+    name: 'Plátano',
+    description: 'Plátanos dulces y listos para comer',
+    price: 1.9,
+    unit: 'kg',
+    category_id: 'cat-frutas',
+    image_url: '/platano.jpg',
+    is_featured: false,
+    is_offer: false,
+    stock_available: true,
+    created_at: new Date().toISOString()
+  }
+  ,{
+    id: 'prod-berenjenas',
+    name: 'Berenjenas',
+    description: 'Berenjenas frescas de temporada',
+    price: 1.8,
+    unit: 'kg',
+    category_id: 'cat-verduras',
+    image_url: '/berenjena.jpg',
+    is_featured: false,
+    is_offer: false,
+    stock_available: true,
+    created_at: new Date().toISOString()
+  }
+  ,{
+    id: 'prod-fresas',
+    name: 'Fresas',
+    description: 'Fresas rojas y dulces',
+    price: 2.9,
+    unit: 'kg',
+    category_id: 'cat-frutas',
+    image_url: '/fresa.jpg',
+    is_featured: false,
+    is_offer: false,
+    stock_available: true,
+    created_at: new Date().toISOString()
+  }
 ];
 
 export interface Category {
